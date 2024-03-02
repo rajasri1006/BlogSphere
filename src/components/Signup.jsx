@@ -7,14 +7,17 @@ import Logo from "./Logo"
 import {useForm} from "react-hook-form"
 import {useDispatch} from "react-redux"
 import {login} from "../store/authSlice"
+import Buffering from "./Buffer"
 
 function Signup() {
     const navigate = useNavigate()
     const [error, setError] = useState("")
     const dispatch = useDispatch()
     const {register, handleSubmit} = useForm()
+    const [loading, setLoading] = useState(false)
 
     const create = async (data) => {
+        setLoading(true)
         setError("")
         try {
             console.log(data);
@@ -26,12 +29,15 @@ function Signup() {
             }
         } catch (error) {
             setError(error.message)
+        } finally {
+            setLoading(false)
         }
     }
 
     return (
         <div className="flex items-center justify-center">
             <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+            {loading && <Buffering />}
                 <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />
