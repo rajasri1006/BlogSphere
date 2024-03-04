@@ -33,7 +33,11 @@ function App() {
               <Footer />
           </div>
       </div>
-  ) : null;
+  ) : (
+    <div className="loader-container">
+        <div className="spinner"></div>
+    </div>
+  );
 }
 
 export default App

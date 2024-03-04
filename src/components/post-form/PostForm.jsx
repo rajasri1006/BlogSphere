@@ -1,4 +1,4 @@
-import React, {useCallback} from "react";
+import React, {useCallback, useState} from "react";
 import {useForm} from "react-hook-form"
 import Button from "../Button"
 import Input from "../Input"
@@ -7,12 +7,14 @@ import Select from "../Select"
 import appwriteSerice from "../../appwrite/config"
 import {useSelector } from "react-redux"
 import {useNavigate} from "react-router-dom"
+import "./postForm.css"
 
 
 export default function PostForm({post}){
+    const [loading, setLoading] = useState(true);
     const {register, handleSubmit, watch, setValue, control, getValues} = useForm({
         defaultValues: {
-            tittle: post?.title || "",
+            title: post?.title || "",
             slug: post?.slug || "",
             content: post?.content || "",
             status: post?.status || "active"
@@ -24,6 +26,7 @@ export default function PostForm({post}){
     const userData = useSelector((state) => state.auth.userData)
 
     const submit = async(data) => {
+        setLoading(false);
         if (post) {
             const file = data.image[0] ? await appwriteSerice.uploadFile(data.image[0]) : null
 
@@ -49,7 +52,7 @@ export default function PostForm({post}){
                 }
             }
         }
-
+        setLoading(true);
     }
 
     const slugTransform = useCallback((value) => {
@@ -64,7 +67,7 @@ export default function PostForm({post}){
             }
         }) 
     }, [watch, slugTransform, setValue])
-    return (
+    return loading ? (
         <form onSubmit={handleSubmit(submit)}
         className="flex flex-wrap"
         >
@@ -72,13 +75,13 @@ export default function PostForm({post}){
                 <Input
                 label="Title"
                 placeholder="Title"
-                className="mb-4"
+                className="mb-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
                 {...register("title", {required: true})}
                 />
                 <Input
                 label="Slug :"
                 placeholder="Slug"
-                className="mb-4"
+                className="mb-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
                 {...register("slug", {required: true})}
                 onInput={(e) => {
                     setValue("slug", slugTransform(e.currentTarget.value), {shouldValidate: true})
@@ -91,11 +94,11 @@ export default function PostForm({post}){
                 defaultValue={getValues("content")}
                 />
             </div>
-            <div className="1/3 px-2">
+            <div className="w-1/3 px-2">
                 <Input
                 label="Featured Image"
                 type="file"
-                className="mb-4"
+                className="mb-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
                 accept="image/png, image/jpg, image/jpeg"
                 {...register("image", {required: !post})}
                 />
@@ -110,7 +113,7 @@ export default function PostForm({post}){
                 <Select
                 options={["active", "inactive"]}
                 label="Status"
-                className="mb-4"
+                className="mb-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
                 {...register("status", {required: true})}
                 />
                 <Button
@@ -119,6 +122,9 @@ export default function PostForm({post}){
                 className="w-full"
                 >{post ? "Update": "Submit"}</Button>
             </div>
-        </form>
-    )
+        </form> ): (
+    <div className="loader-container-postForm">
+        <div className="spinner-postForm"></div>
+    </div>
+  )
 }

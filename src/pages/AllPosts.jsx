@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import Container from '../components/container/Container'
 import PostCard from "../components/PostCard"
-
+import "./allPosts.css"
 
 function AllPosts() {
   const [posts, setPosts] = useState([])
@@ -19,12 +19,8 @@ function AllPosts() {
   
   if (posts.length === 0) {
     return (
-      <div className='w-full py-8'>
-      <Container>
-        <div className="flex flex-wrap">
-          <h1>Login to read posts</h1>
-        </div>
-      </Container>
+      <div className="loader-container-allPosts">
+        <div className="spinner-allPosts"></div>
     </div>
     )
   }

@@ -7,10 +7,11 @@ function RTE({
     name, control, label, defaultValue = ""
 }) {
   return (
-    <div className='w-full'>
-        {
-            label && <label className='inline-block mb-1 pl-1'> {label}</label>
-        }
+    <>
+    {
+        label && <label className='inline-block mb-1 pl-1 text-xl font-Roboto'> {label}</label>
+    }
+    <div className='w-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] rounded-lg mb-4'>
         <Controller
         name={name || "content"}
         control={control}
@@ -53,6 +54,7 @@ function RTE({
         )}
         />
     </div>
+    </>
   )
 }
 
