@@ -15,7 +15,7 @@ function Footer() {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-600">
-                                    &copy; Copyright 2023. All Rights Reserved by DevUI.
+                                    &copy; Copyright 2024. All Rights Reserved by BlogSphere.
                                 </p>
                             </div>
                         </div>
@@ -23,7 +23,7 @@ function Footer() {
                     <div className="w-full p-6 md:w-1/2 lg:w-2/12">
                         <div className="h-full">
                             <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
-                                Company
+                                BlogSphere
                             </h3>
                             <ul>
                                 <li className="mb-4">
