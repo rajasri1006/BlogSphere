@@ -115,6 +115,15 @@ export class Service {
             fileId
         ).href
     }
+
+    async getPostsByUser(userId) {
+        try {
+            return await this.getPosts([Query.equal("status", "active"), Query.equal("userId", userId)]);
+        } catch (error) {
+            console.log("Appwrite service :: getPostsByUser() :: ", error);
+            return false;
+        }
+    }
 }
 
 
