@@ -1,8 +1,18 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import { Link } from "react-router-dom";
 import Blog from "../assets/blog.png";
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 function Home() {
+  const status = useSelector(state => state.auth.status);
+  const navigate = useNavigate();
+    const navigateHome = () => {
+        if (status) {
+            navigate('/all-posts');
+        } else {
+            navigate('/signup');
+        }
+    };
   return (
     <div className="w-full py-8 bg-white">
       <div className="text-6xl text-center font-Dancing font-light mt-14">
@@ -26,11 +36,14 @@ function Home() {
       <h1 className="text-3xl text-center font-Roboto font-light mt-2">
         the web sphere.
       </h1>
-      <Link to="/signup" className="flex justify-center items-center mt-10">
-        <button className="border border-[#7278bf] bg-[#7278bf] text-2xl text-white font-Roboto font-light px-6 py-2 rounded-lg">
+      <div className="flex justify-center items-center mt-10">
+        <button 
+        className="border border-[#7278bf] bg-[#7278bf] text-2xl text-white font-Roboto font-light hover:bg-[#4d56b9] px-6 py-2 rounded-lg"
+        onClick={() => navigateHome()}
+        >
           Get Started
         </button>
-      </Link>
+      </div>
       <div className="w-full flex items-center justify-center mt-20">
         <img
           src={Blog}
@@ -105,11 +118,13 @@ function Home() {
           files, no other dependencies required.
         </p>
       </div>
-      <Link to="/signup" className="flex justify-center items-center mt-10">
-        <button className="border border-[#7278bf] bg-[#7278bf] text-2xl text-white font-Roboto font-light px-6 py-2 rounded-lg">
+      <div  className="flex justify-center items-center mt-10">
+        <button className="border border-[#7278bf] bg-[#7278bf] text-2xl text-white font-Roboto font-light hover:bg-[#4d56b9] px-6 py-2 rounded-lg"
+        onClick={() => navigateHome()}
+        >
           Get Started
         </button>
-      </Link>
+      </div>
       <div className="w-full max-w-[900px] mx-auto mt-16">
         <h1 className="text-4xl font-Roboto font-light mb-4 text-center">
         See what others are building
@@ -122,11 +137,12 @@ function Home() {
       <p className="font-Roboto text-xl font-light text-center mb-2">
       See what's been
         </p>
-        <Link to="/signup" className="flex justify-center items-center">
-        <h1 className="text-4xl font-Roboto font-light mb-4 text-center hover:text-gray-600">
+        <div className="flex justify-center items-center">
+        <h1 className="text-4xl font-Roboto font-light mb-4 text-center hover:text-gray-600 cursor-pointer"
+        onClick={() => navigateHome()}>
         Created with WriteFreely
         </h1>
-      </Link>
+      </div>
       </div>
     </div>
   );
