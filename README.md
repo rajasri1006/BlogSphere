@@ -15,43 +15,53 @@ BlogSphere is a dynamic online platform designed to help individuals express the
 
 # 🚀 Features
 
-User authentication: Provides a safe way to register and log in with email addresses.
-Article management: simplifies the writing, editing, and removal of articles.
-Rich Text Editor: The editor, which is powered by TinyMCE, offers a lot of formatting choices, such as special characters, font styles, colors, headings, indentations, photos, tables, and numbers.
-Browse Articles: Visitors can look through and interact with articles written by other authors in a special section.
+<ul>
+<li>User authentication: Provides a safe way to register and log in with email addresses.</li>
+<li>Article management: simplifies the writing, editing, and removal of articles.</li>
+<li>Rich Text Editor: The editor, which is powered by TinyMCE, offers a lot of formatting choices, such as special characters, font styles, colors, headings, indentations, photos, tables, and numbers.</li>
+<li>Browse Articles: Visitors can look through and interact with articles written by other authors in a special section.</li>
+</ul>
 
 # 🛠️ Technologies Used
 
-React (Frontend): A versatile JavaScript library for crafting user interfaces.
-Tailwind CSS (Styling): A utility-first CSS framework for constructing efficient and responsive designs.
-Appwrite (Backend): An end-to-end backend server that simplifies backend tasks, ensuring secure user authentication and data storage.
+<ul>
+<li>React (Frontend): A versatile JavaScript library for crafting user interfaces.</li>
+<li>Tailwind CSS (Styling): A utility-first CSS framework for constructing efficient and responsive designs.</li>
+<li>Appwrite (Backend): An end-to-end backend server that simplifies backend tasks, ensuring secure user authentication and data storage.</li>
+</ul>
 
 # 📦 Dependencies
 
-"@reduxjs/toolkit": "^2.0.1"
-"@tinymce/tinymce-react": "^4.3.2"
-"appwrite": "^13.0.1"
-"html-react-parser": "^5.1.1"
-"react": "^18.2.0"
-"react-dom": "^18.2.0"
-"react-hook-form": "^7.49.3"
-"react-redux": "^9.1.0"
-"react-router-dom": "^6.21.3"
+<ul>
+<li>"@reduxjs/toolkit": "^2.0.1"</li>
+<li>"@tinymce/tinymce-react": "^4.3.2"</li>
+<li>"appwrite": "^13.0.1"</li>
+<li>"html-react-parser": "^5.1.1"</li>
+<li>"react": "^18.2.0"</li>
+<li>"react-dom": "^18.2.0"</li>
+<li>"react-hook-form": "^7.49.3"</li>
+<li>"react-redux": "^9.1.0"</li>
+<li>"react-router-dom": "^6.21.3"</li>
+</ul>
 
 # 🚦 Running the Project
 
-Clone the Repository: git clone https://github.com/lakshya-26/BlogHub
-Navigate to the Project Directory: cd BlogSphere
-Install Dependencies: npm install
-Run npm run dev to get the project started.
+<ul>
+<li>Clone the Repository: git clone https://github.com/lakshya-26/BlogHub</li>
+<li>Navigate to the Project Directory: cd BlogSphere</li>
+<li>Install Dependencies: npm install</li>
+<li>Run npm run dev to get the project started.</li>
+</ul>
 
 # 🌟 Usage
 
-Register and Sign in: Create an account with your email address and log in to see all of the features.
-Write and oversee articles: For publishing a post, select "Add Post" from the navbar. Delete or alter your articles as necessary.
-Examine Every Post: Look through the "All Posts" section to find posts written by other users.
-Examine Youe Post: Look through the "My Posts" section to find posts written by you. 
-📝 Editor for Rich Text: TinyMCE is used by the program to provide a user-friendly and robust rich text editing interface. It allows users to format text, add multimedia components, and write interesting articles that look and feel like they were written by pros.
+<ul>
+<li>Register and Sign in: Create an account with your email address and log in to see all of the features.</li>
+<li>Write and oversee articles: For publishing a post, select "Add Post" from the navbar. Delete or alter your articles as necessary.</li>
+<li>Examine Every Post: Look through the "All Posts" section to find posts written by other users.</li>
+<li>Examine Youe Post: Look through the "My Posts" section to find posts written by you. </li>
+<li>📝 Editor for Rich Text: TinyMCE is used by the program to provide a user-friendly and robust rich text editing interface. It allows users to format text, add multimedia components, and write interesting articles that look and feel like they were written by pros.</li>
+</ul>
 
 # 🌐 Appwrite Integration
 
