@@ -40,6 +40,7 @@ function Post() {
         <div className='w-full max-w-[1200px] mx-auto flex justify-center mb-4 border rounded-xl p-2 shadow-[0_3px_10px_rgb(0,0,0,0.2)]'>
           <img src={appwriteService.getFilePreview(post.featuredImage)} alt={post.title} className='rounded-xl' />
         </div>
+        <p className="text-gray-600 ml-6 mb-4">Author: {post.author}</p>
         <div className="w-full mb-6 max-w-[1000px] mx-auto">
           <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
           <div className="browser-css">

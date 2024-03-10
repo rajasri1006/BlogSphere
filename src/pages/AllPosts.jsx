@@ -19,9 +19,11 @@ function AllPosts() {
   
   if (posts.length === 0) {
     return (
-      <div className="loader-container-allPosts">
+      <div className='flex items-center justify-center mt-40 mb-40'>
+        <div className="loader-container-allPosts">
         <div className="spinner-allPosts"></div>
-    </div>
+      </div>
+      </div>
     )
   }
   

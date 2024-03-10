@@ -17,7 +17,8 @@ export default function PostForm({post}){
             title: post?.title || "",
             slug: post?.slug || "",
             content: post?.content || "",
-            status: post?.status || "active"
+            status: post?.status || "active",
+            author: post?.author || "Anonymous", 
 
         }
     })
@@ -71,7 +72,7 @@ export default function PostForm({post}){
         <form onSubmit={handleSubmit(submit)}
         className="flex flex-wrap"
         >
-            <div className="w-2/3 px-2">
+            <div className="w-full lg:w-2/3 px-2">
                 <Input
                 label="Title"
                 placeholder="Title"
@@ -93,8 +94,14 @@ export default function PostForm({post}){
                 control={control}
                 defaultValue={getValues("content")}
                 />
+                <Input 
+                label="Author: "
+                placeholder="Author's Name"
+                className="mb-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+                {...register("author")}
+                />
             </div>
-            <div className="w-1/3 px-2">
+            <div className="w-full lg:w-1/3 px-2">
                 <Input
                 label="Featured Image"
                 type="file"
@@ -123,8 +130,10 @@ export default function PostForm({post}){
                 >{post ? "Update": "Submit"}</Button>
             </div>
         </form> ): (
-    <div className="loader-container-postForm">
+    <div className="flex items-center justify-center mt-40 mb-40">
+        <div className="loader-container-postForm">
         <div className="spinner-postForm"></div>
+    </div>
     </div>
   )
 }

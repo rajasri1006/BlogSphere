@@ -38,7 +38,7 @@ function App() {
       </div>
       </>
   ) : (
-    <div className="loader-container">
+        <div className="loader-container">
         <div className="spinner"></div>
     </div>
   );
