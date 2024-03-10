@@ -38,7 +38,7 @@ function Home() {
         className="border border-[#7278bf] bg-[#7278bf] text-2xl text-white font-Roboto font-light hover:bg-[#4d56b9] px-6 py-2 rounded-lg"
         onClick={() => navigateHome()}
         >
-          Get Started
+          {status ? "See Posts" : "Get Started"}
         </button>
       </div>
       <div className="w-full flex items-center justify-center mt-20">
@@ -119,7 +119,7 @@ function Home() {
         <button className="border border-[#7278bf] bg-[#7278bf] text-2xl text-white font-Roboto font-light hover:bg-[#4d56b9] px-6 py-2 rounded-lg"
         onClick={() => navigateHome()}
         >
-          Get Started
+          {status ? "See Posts" : "Get Started"}
         </button>
       </div>
       <div className="w-full max-w-[900px] mx-auto mt-16">
