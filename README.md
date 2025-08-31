@@ -44,14 +44,6 @@ BlogSphere is a dynamic online platform designed to help individuals express the
 <li>"react-router-dom": "^6.21.3"</li>
 </ul>
 
-# 🚦 Running the Project
-
-<ul>
-<li>Clone the Repository: git clone https://github.com/lakshya-26/BlogHub</li>
-<li>Navigate to the Project Directory: cd BlogSphere</li>
-<li>Install Dependencies: npm install</li>
-<li>Run npm run dev to get the project started.</li>
-</ul>
 
 # 🌟 Usage
 
