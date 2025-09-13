@@ -59,7 +59,5 @@ BlogSphere is a dynamic online platform designed to help individuals express the
 
 The backbone is Appwrite, which improves user authentication and data storage security while optimizing backend operations. Appwrite makes it easier for developers to create safe apps faster by reducing the number of steps and complexity necessary in creating a contemporary backend API.
 
-# 🚀 Deployment
 
-BlogSphere is accessible on [Demo Link](https://blog-sphere-two.vercel.app/), providing a convenient platform for users to experience the application.
 
